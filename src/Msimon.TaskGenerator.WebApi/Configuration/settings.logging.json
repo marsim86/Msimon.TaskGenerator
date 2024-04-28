@@ -1,0 +1,30 @@
+﻿{
+  "Serilog": {
+    "Using": [
+      "Serilog.Sinks.File",
+      "Serilog.Sinks.Async",
+      "Serilog.Sinks.Console"
+    ],
+    "MinimumLevel": "Debug",
+    "WriteTo": [
+      {
+        "Name": "Async",
+        "Args": {
+          "configure": [
+            {
+              "Name": "File",
+              "Args": {
+                "rollingInterval": "Day",
+                "path": "/tmp/logs/log-.txt",
+                "formatter": "Serilog.Formatting.Json.JsonFormatter, Serilog"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Name": "Console"
+      }
+    ]
+  }
+}

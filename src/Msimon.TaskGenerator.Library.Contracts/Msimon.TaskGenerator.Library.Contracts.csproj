@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" />
+    <PackageReference Include="System.ComponentModel.Annotations" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Msimon.TaskGenerator.Infrastructure.Contracts\Msimon.TaskGenerator.Infrastructure.Contracts.csproj" />
+    <ProjectReference Include="..\Msimon.TaskGenerator.Infrastructure.Impl\Msimon.TaskGenerator.Infrastructure.Impl.csproj" />
+  </ItemGroup>
+
+</Project>

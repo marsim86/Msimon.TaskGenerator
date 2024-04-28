@@ -1,0 +1,15 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Features>$(Features);flow-analysis</Features>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <IsPackable>false</IsPackable>
+    <NuGetAuditMode>direct</NuGetAuditMode>
+    <NuGetAuditLevel>high</NuGetAuditLevel>
+    <NoWarn>NU1507</NoWarn>
+  </PropertyGroup>
+</Project>

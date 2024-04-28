@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Msimon.TaskGenerator.Infrastructure.Contracts\Msimon.TaskGenerator.Infrastructure.Contracts.csproj" />
+		<ProjectReference Include="..\Msimon.TaskGenerator.Library.Contracts\Msimon.TaskGenerator.Library.Contracts.csproj" />
+	</ItemGroup>
+
+</Project>

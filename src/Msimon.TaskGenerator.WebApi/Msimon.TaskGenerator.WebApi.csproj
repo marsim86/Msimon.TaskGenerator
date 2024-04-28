@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+	
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<Version>8.0.0</Version>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+	</PropertyGroup>
+	
+	<ItemGroup>
+	  <Compile Remove="Extensions\ApplicationBuilderExtensions\EndpointsExtension.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" />
+    <PackageReference Include="Asp.Versioning.Mvc" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <PackageReference Include="Microsoft.Identity.Web" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" />
+    <PackageReference Include="Serilog.Sinks.Async" />
+    <PackageReference Include="Serilog.Sinks.Console" />
+    <PackageReference Include="Serilog.Sinks.File" />
+    <PackageReference Include="Hellang.Middleware.ProblemDetails" />
+  </ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\Msimon.TaskGenerator.Infrastructure.Contracts\Msimon.TaskGenerator.Infrastructure.Contracts.csproj" />
+	  <ProjectReference Include="..\Msimon.TaskGenerator.Infrastructure.Impl\Msimon.TaskGenerator.Infrastructure.Impl.csproj" />
+	  <ProjectReference Include="..\Msimon.TaskGenerator.Library.Contracts\Msimon.TaskGenerator.Library.Contracts.csproj" />
+	  <ProjectReference Include="..\Msimon.TaskGenerator.Library.Impl\Msimon.TaskGenerator.Library.Impl.csproj" />
+  </ItemGroup>
+  
+	<ItemGroup>
+		<Folder Include="Configuration\" />
+	</ItemGroup>
+
+</Project>

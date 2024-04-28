@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Msimon.TaskGenerator.Infrastructure.Contracts\Msimon.TaskGenerator.Infrastructure.Contracts.csproj" />
+	</ItemGroup>
+
+</Project>
