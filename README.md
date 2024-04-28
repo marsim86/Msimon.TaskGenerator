@@ -39,3 +39,7 @@ Short description what this api does.
 - He crado una prueba unitaria y otra prueba de integración.  Habría que hacer pruebas de integración para almenos todos los servicios de Library para todos los Controllers publicados.
 - Los endpoints publicados utilizan un versionado para su publicación, por si la aplicación necesitase más de una versión publicada a la vez.
 - Para el Sistema de Caché, que nunca había trabajado previamente, he utilizado el interfaz IMemoryCache que implementa Microsoft.
+- De ORM he utilizado el nuget de SqlServer, que es con la DB que yo estoy acostumbrado a trabajar.
+  Pero con una única tabla tampoco hay mucho que mostrar.  Podria habar utilizado el patrón UnitOfWork, por usarlo simplemente como ejemplo.
+- Utilizo injection para los servicios, haciendo el servicio de la cache de tipo Singleton para que use siempre la misma caché.
+- Para el mapeo de clases utilizo AutoMapper.
