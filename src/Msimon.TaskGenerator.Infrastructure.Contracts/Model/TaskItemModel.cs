@@ -41,7 +41,7 @@ namespace Msimon.TaskGenerator.Infrastructure.Contracts.Model
         /// 
         /// </summary>
         [Column(TypeName = "datetime")]
-        public DateTime OperationDate { get; set; }
+        public DateTime? OperationDate { get; set; }
 
         /// <summary>
         /// 

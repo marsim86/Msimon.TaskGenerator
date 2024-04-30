@@ -1,6 +1,5 @@
-﻿using System.Text.Json.Serialization;
-using Asp.Versioning.ApiExplorer;
-using Hellang.Middleware.ProblemDetails;
+﻿using Asp.Versioning.ApiExplorer;
+using System.Text.Json.Serialization;
 
 
 #pragma warning disable CS1591
@@ -22,7 +21,7 @@ namespace Msimon.TaskGenerator.WebApi
             services.AddCustomSwagger();
             services.AddCustomHealthChecks();
             services.AddCustomProblemDetails();
-            
+
             services.AddLibraryServices()
                     .AddInfrastructureServices(configuration);
 
@@ -35,7 +34,7 @@ namespace Msimon.TaskGenerator.WebApi
             IApiVersionDescriptionProvider descriptionProvider)
         {
 
-            
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -47,9 +46,7 @@ namespace Msimon.TaskGenerator.WebApi
 
             app.UseRouting();
 
-            //app.UseCustomEndpoints(configuration);
-
-
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }
 }

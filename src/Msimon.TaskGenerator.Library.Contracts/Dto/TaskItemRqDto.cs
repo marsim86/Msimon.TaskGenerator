@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Msimon.TaskGenerator.Library.Contracts.Dto
+﻿namespace Msimon.TaskGenerator.Library.Contracts.Dto
 {
     /// <summary>
     /// 
@@ -27,10 +19,5 @@ namespace Msimon.TaskGenerator.Library.Contracts.Dto
         /// 
         /// </summary>
         public DateTime CreationDate { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public DateTime OperationDate { get; set; }
     }
 }

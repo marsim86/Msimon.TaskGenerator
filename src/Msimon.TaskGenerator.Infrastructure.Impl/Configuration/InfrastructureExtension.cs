@@ -11,7 +11,7 @@ namespace Microsoft.Extensions.DependencyInjection
         
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddTransient<ITaskItemRepository, TaskItemRepository>();
+            services.AddTransient<ITaskItemRepository, TaskItemMockedRespository>();
 
             var connectionString = configuration["ConnectionStrings:DatabaseConnection"];
             

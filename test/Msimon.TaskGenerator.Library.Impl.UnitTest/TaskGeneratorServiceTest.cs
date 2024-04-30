@@ -24,13 +24,13 @@ namespace Msimon.TaskGenerator.Library.Impl.UnitTest
             var taskCacheService = Substitute.For<ITaskCacheService>();
             var taskItemRqDto = new TaskItemRqDto()
             {
-                CreationDate = DateTime.UtcNow,
+                CreationDate = DateTime.Now,
                 TaskDescription = "Description",
                 TaskName = "Name"
             };
             var taskItem = new TaskItem() {
                 TaskId = 1,
-                CreationDate = DateTime.UtcNow,
+                CreationDate = DateTime.Now,
                 TaskDescription = "Description",
                 TaskName = "Name",
                 IsCompleted = false,

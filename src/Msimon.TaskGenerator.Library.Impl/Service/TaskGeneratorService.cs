@@ -44,7 +44,9 @@ namespace Msimon.TaskGenerator.Library.Impl.Service
                 if (result != null)
                 {
                     result.IsCompleted = true;
+                    result.OperationDate = DateTime.Now;
                     var updateResult = await Task.Run(() => taskCacheService.UpdateTask(result));
+                    taskCacheService.UpdateTask(result);
                     await taskItemRepository.UpdateItem(result.MapToModel<TaskItemModel>());
 
                     return updateResult ? result.MapToDto<TaskItemRsDto>() : null;
@@ -69,14 +71,14 @@ namespace Msimon.TaskGenerator.Library.Impl.Service
                 var result = await Task.Run(() => taskCacheService.GetTasks());
                 if (!result.Any())
                 {
-                    result = taskItemRepository.GetAllItems().MapToModel<IEnumerable<TaskItem>>();
-                    taskCacheService.AddTask(result);
+                    result = await restoreFromDataBase();
                 }
 
                 return result.Where(x => x.IsCompleted || !onlyUncompleted).MapToDto<IEnumerable<TaskItemRsDto>>();
             }
             catch (Exception ex)
             {
+                //Pinta Logs
                 Console.WriteLine(ex.ToString());
                 return Enumerable.Empty<TaskItemRsDto>();
             }
@@ -86,7 +88,7 @@ namespace Msimon.TaskGenerator.Library.Impl.Service
         {
             try
             {
-                var result = await Task.Run(() => taskCacheService.GetTasks().Where(x => x.IsCompleted));
+                var result = await Task.Run(() => taskCacheService.GetTasks().Where(x => !x.IsCompleted));
                 return result.OrderBy(x => x.CreationDate).MapToDto<IEnumerable<TaskItemRsDto>>();
             }
             catch (Exception ex)
@@ -94,6 +96,13 @@ namespace Msimon.TaskGenerator.Library.Impl.Service
                 Console.WriteLine(ex.ToString());
                 return Enumerable.Empty<TaskItemRsDto>();
             }
+        }
+
+        private async Task<IEnumerable<TaskItem>> restoreFromDataBase()
+        {
+            var result = (await taskItemRepository.GetAllItems()).MapToModel<IEnumerable<TaskItem>>();
+            taskCacheService.AddTask(result);
+            return result;
         }
     }
 }
